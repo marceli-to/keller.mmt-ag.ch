@@ -1,0 +1,2 @@
+Seeding:
+php artisan db:seed --class=ClientSeeder
