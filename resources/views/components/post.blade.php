@@ -1,19 +1,6 @@
-<article class="mb-32 border-t border-black py-8 {{ !$post->published ? 'opacity-40' : '' }}">
-  <div class="font-bold">
-    {{ $post->date }}
-  </div>
-  <div>
-    {{ $post->text }}
-  </div>
-  @if ($post->media)
-    @foreach ($post->media as $media)
-      <div>
-        <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-max mt-4">
-      </div>
-    @endforeach
-  @endif 
+<article class="mb-32 relative border-t border-black py-8 {{ !$post->published ? 'opacity-40' : '' }}">
   @if (auth()->check())
-    <footer class="flex mt-24 text-xs space-x-12">
+    <header class="flex text-xs space-x-12 absolute right-0 top-4">
       <a href="javascript:;" 
         wire:click="delete({{ $post->id }})" 
         wire:confirm="Are you sure you want to delete this post?" 
@@ -23,8 +10,23 @@
       <a href="javascript:;" 
         wire:click="toggle({{ $post->id }})" 
         class="no-underline hover:underline underline-offset-2 decoration-1">
-        Publizieren
+        {{ $post->published ? 'Verstecken' : 'Publizieren' }}
       </a>
-    </footer>
+    </header>
   @endif
+  <div class="font-bold">
+    {{ $post->date }}
+  </div>
+  @if ($post->text)
+    <div class="mb-24">
+      {{ $post->text }}
+    </div>
+  @endif
+  @if ($post->media)
+    @foreach ($post->media as $media)
+      <div class="mb-32 last-of-type:mb-0">
+        <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-max mt-4">
+      </div>
+    @endforeach
+  @endif 
 </article>
