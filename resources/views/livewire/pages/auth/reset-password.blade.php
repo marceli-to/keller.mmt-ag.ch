@@ -75,7 +75,7 @@ new #[Layout('layouts.guest')] class extends Component
     <!-- Email Address -->
     <div>
       <x-form.label for="email" :value="__('Email')" />
-      <x-form.text 
+      <x-form.input 
       wire:model="email" 
       id="email" 
       type="email" 
@@ -92,7 +92,7 @@ new #[Layout('layouts.guest')] class extends Component
         for="password" 
         :value="__('Password')" />
 
-      <x-form.text 
+      <x-form.input 
         wire:model="password" 
         id="password" 
         type="password" 
@@ -108,7 +108,7 @@ new #[Layout('layouts.guest')] class extends Component
         for="password_confirmation" 
         :value="__('Confirm Password')" />
 
-      <x-form.text 
+      <x-form.input 
         wire:model="password_confirmation" 
         id="password_confirmation" 
         type="password"

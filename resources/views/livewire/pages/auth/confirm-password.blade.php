@@ -47,7 +47,7 @@ new #[Layout('layouts.guest')] class extends Component
         <div>
             <x-form.label for="password" :value="__('Password')" />
 
-            <x-form.text wire:model="password"
+            <x-form.input wire:model="password"
                           id="password"
                           class="block mt-1 w-full"
                           type="password"

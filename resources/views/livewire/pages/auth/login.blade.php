@@ -19,7 +19,7 @@ new #[Layout('layouts.guest')] class extends Component
     Session::regenerate();
     $this->redirect(
       session('url.intended', RouteServiceProvider::HOME),
-      navigate: true
+      navigate: false
     );
   }
 }; ?>
@@ -39,7 +39,7 @@ new #[Layout('layouts.guest')] class extends Component
         for="email" 
         :value="__('E-Mail')" />
 
-      <x-form.text 
+      <x-form.input 
         wire:model="form.email" 
         id="email" 
         type="email" 
@@ -55,7 +55,7 @@ new #[Layout('layouts.guest')] class extends Component
         for="password" 
         :value="__('Password')" />
 
-      <x-form.text 
+      <x-form.input 
         wire:model="form.password" 
         id="password" 
         type="password"

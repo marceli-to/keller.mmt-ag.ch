@@ -49,7 +49,7 @@ new #[Layout('layouts.guest')] class extends Component
         for="email" 
         :value="__('E-Mail')" />
 
-      <x-form.text 
+      <x-form.input 
         wire:model="email" 
         id="email" 
         type="email" 

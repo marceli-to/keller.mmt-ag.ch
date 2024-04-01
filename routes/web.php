@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'home')->name('page.home');
-
-
-// create route group with middleware 'auth' and 'verified'
-// Route::middleware(['auth', 'verified'])->group(function () {
-//   Route::view('dashboard', 'dashboard')->name('dashboard');
-// });
+Route::get('/img/{template}/{filename}/{maxW?}/{maxH?}/{coords?}', [ImageController::class, 'getResponse']);
 
 require __DIR__.'/auth.php';
