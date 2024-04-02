@@ -13,7 +13,11 @@ use App\Http\Controllers\ImageController;
 |
 */
 
-Route::view('/', 'home')->name('page.home');
+Route::view('/', 'posts')->name('posts');
 Route::get('/img/{template}/{filename}/{maxW?}/{maxH?}/{coords?}', [ImageController::class, 'getResponse']);
 
+Route::middleware(['auth', 'verified'])->group(function () {
+  Route::view('post/create', 'posts')->name('post.create');
+  Route::view('post/update/{post}', 'posts')->name('post.update');
+});
 require __DIR__.'/auth.php';

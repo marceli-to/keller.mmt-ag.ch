@@ -10,14 +10,14 @@
     @drop.prevent="onDrop"
     class="w-full antialiased"
 >
-    <div class="flex flex-col items-start h-full w-full max-w-2xl justify-center bg-white dark:bg-gray-800 dark:border-gray-600 dark:hover:border-gray-500">
+    <div class="flex flex-col items-start h-full w-full max-w-2xl justify-center bg-white">
         @if(! is_null($error))
-            <div class="bg-red-50 p-4 w-full mb-4 rounded dark:bg-red-600">
+            <div class="bg-red-100 p-4 w-full mb-4 rounded">
                 <div class="flex gap-3 items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-red-400 dark:text-red-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-red-400">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" />
                     </svg>
-                    <h3 class="text-sm text-red-800 dark:text-red-100">{{ $error }}</h3>
+                    <h3 class="text-sm text-red-800">{{ $error }}</h3>
                 </div>
             </div>
         @endif
@@ -71,37 +71,37 @@
         </div>
 
 
-        @if(count($files) > 0)
-            <div class="flex flex-wrap gap-x-10 gap-y-16 border-t pt-8 border-black justify-start w-full mt-24">
-                @foreach($files as $file)
-                    <div class="flex items-start justify-between gap-2 border-b border-black w-full h-auto overflow-hidden">
-                        <div class="flex items-center gap-8 pb-8">
-                            @if($this->isImageMime($file['extension']))
-                                <div class="flex-none w-64 h-64">
-                                    <img src="{{ $file['temporaryUrl'] }}" class="object-cover w-full h-full" alt="{{ $file['name'] }}">
-                                </div>
-                            @else
-                                <div class="flex justify-center items-center w-14 h-14 bg-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-8 h-8 text-gray-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                    </svg>
-                                </div>
-                            @endif
-                            <div class="flex flex-col items-start gap-4">
-                                <div class="text-center text-sm">{{ $file['name'] }}</div>
-                                <div class="text-center text-gray-400 text-xs">{{ Number::fileSize($file['size']) }}</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center mr-4 mt-8">
-                            <button type="button" @click="removeUpload('{{ $file['tmpFilename'] }}')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-black">
-                                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+        @if($files && count($files) > 0)
+          <div class="flex flex-wrap gap-x-10 gap-y-16 border-t pt-8 border-black justify-start w-full mt-24">
+              @foreach($files as $file)
+                  <div class="flex items-start justify-between gap-2 border-b border-black w-full h-auto overflow-hidden">
+                      <div class="flex items-center gap-8 pb-8">
+                          @if($this->isImageMime($file['extension']))
+                              <div class="flex-none w-64 h-64">
+                                  <img src="{{ $file['temporaryUrl'] }}" class="object-cover w-full h-full" alt="{{ $file['name'] }}">
+                              </div>
+                          @else
+                              <div class="flex justify-center items-center w-14 h-14 bg-gray-100">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-8 h-8 text-gray-500">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                  </svg>
+                              </div>
+                          @endif
+                          <div class="flex flex-col items-start gap-4">
+                              <div class="text-center text-sm">{{ $file['name'] }}</div>
+                              <div class="text-center text-gray-400 text-xs">{{ Number::fileSize($file['size']) }}</div>
+                          </div>
+                      </div>
+                      <div class="flex items-center mr-4 mt-8">
+                          <button type="button" @click="removeUpload('{{ $file['tmpFilename'] }}')">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-black">
+                                  <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                              </svg>
+                          </button>
+                      </div>
+                  </div>
+              @endforeach
+          </div>
         @endif
     </div>
 

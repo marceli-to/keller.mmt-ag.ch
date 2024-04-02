@@ -18,7 +18,7 @@ class UpdatePost extends Component
   public function save()
   {
     $this->form->update();
-    return $this->redirect(route('page.home'), navigate: true);
+    return $this->redirect(route('posts'), navigate: true);
   }
 
   public function render()

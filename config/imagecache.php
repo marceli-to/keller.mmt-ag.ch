@@ -56,6 +56,7 @@ return [
     'templates' => [
       'large' => 'App\Filters\Image\Template\Large',
       'small' => 'App\Filters\Image\Template\Small',
+      'thumbnail' => 'App\Filters\Image\Template\Thumbnail',
     ],
 
     /*

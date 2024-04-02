@@ -12,6 +12,11 @@
         class="no-underline hover:underline underline-offset-2 decoration-1">
         {{ $post->published ? 'Verstecken' : 'Publizieren' }}
       </a>
+      <a href="{{ route('post.update', $post) }}"
+        wire:navigate
+        class="no-underline hover:underline underline-offset-2 decoration-1">
+        Bearbeiten
+      </a>
     </header>
   @endif
   <div class="font-bold">
@@ -24,7 +29,7 @@
   @endif
   @if ($post->media)
     @foreach ($post->media as $media)
-      <div class="mb-32 last-of-type:mb-0">
+      <div class="mt-32">
         <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-max mt-4">
       </div>
     @endforeach

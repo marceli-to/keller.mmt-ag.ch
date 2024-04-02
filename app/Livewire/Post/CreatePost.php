@@ -8,25 +8,18 @@ use Livewire\Component;
 class CreatePost extends Component
 {
   public PostForm $form; 
-  
-  public $clients = [];
-
-  public $showDialog = false;
 
   protected $view = 'livewire.pages.post.form';
-
-  public function __construct()
-  {
-  }
 
   public function save()
   {
     $this->form->store();
-    return $this->redirect(route('page.home'), navigate: true);
+    return $this->redirect(route('posts'), navigate: true);
   }
 
   public function render()
   {
+    $this->form->date = date('Y-m-d');
     return view($this->view);
   }
 }
