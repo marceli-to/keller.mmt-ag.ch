@@ -19,13 +19,17 @@ class PostForm extends Form
 
   public $images = [];
 
+  public $media = [];
+
   public function setPost(Post $post)
   {
+    $post = Post::with('media')->findOrFail($post->id);
     $this->post = $post;
     $this->date = date('Y-m-d', strtotime($post->date));
     $this->text = $post->text;
     $this->published = $post->published;
     $this->media = $post->media;
+
   }
 
   public function store() 
@@ -39,6 +43,26 @@ class PostForm extends Form
       ])
     );
 
+    $this->handleMedia($post);
+    $this->reset(); 
+  }
+
+  public function update()
+  {
+    $this->validate();
+    $this->post->update(
+      $this->only([
+        'date', 
+        'text',
+        'published'
+      ])
+    );
+
+    $this->handleMedia($this->post);
+  }
+
+  public function handleMedia(Post $post)
+  {
     if ($this->images)
     {
       foreach ($this->images as $image)
@@ -55,20 +79,6 @@ class PostForm extends Form
         ]);
       }
     }
-
-    $this->reset(); 
-  }
-
-  public function update()
-  {
-    $this->validate();
-    $this->post->update(
-      $this->only([
-        'date', 
-        'text',
-        'published'
-      ])
-    );
   }
 
 }

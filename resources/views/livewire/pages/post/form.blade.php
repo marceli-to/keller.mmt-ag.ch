@@ -24,28 +24,7 @@
         :multiple="true" />
     </div>
     @if ($form->media)
-      <div class="flex flex-wrap gap-x-10 gap-y-16 justify-start w-full">
-        @foreach($form->media as $media)
-          <div class="flex items-start justify-between gap-2 border-b border-black w-full h-auto overflow-hidden">
-            <div class="flex items-center gap-8 pb-8">
-              <div class="flex-none w-64 h-64">
-                <img src="/img/thumbnail/{{ $media->name }}" alt="{{ $media->name }}" class="object-cover w-full h-full">
-              </div>
-              <div class="flex flex-col items-start gap-4">
-                <div class="text-center text-sm">{{ $media->name }}</div>
-                <div class="text-center text-gray-400 text-xs">{{ Number::fileSize($media->size) }}</div>
-              </div>
-            </div>
-            <div class="flex items-center mr-4 mt-8">
-              <button type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-black">
-                  <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        @endforeach
-      </div>
+      <livewire:post.list_post_media :mediaItems="$form->media" />
     @endif
     <div>
       <label for="publish" class="flex leading-none items-center">

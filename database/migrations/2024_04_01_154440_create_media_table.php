@@ -16,6 +16,7 @@ return new class extends Migration
           $table->string('name');
           $table->string('extension', 4);
           $table->integer('size');
+          $table->integer('order')->default(0);
           $table->foreignId('post_id')->constrained()->onDelete('cascade');
           $table->timestamps();
         });

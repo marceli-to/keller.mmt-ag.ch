@@ -3,7 +3,9 @@ namespace App\Livewire\Post;
 use App\Livewire\Forms\PostForm;
 use Livewire\Component;
 use App\Models\Post;
- 
+use App\Models\Media;
+use App\Services\Media as MediaService;
+
 class UpdatePost extends Component
 {
   public PostForm $form;

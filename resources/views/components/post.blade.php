@@ -28,7 +28,7 @@
     </div>
   @endif
   @if ($post->media)
-    @foreach ($post->media as $media)
+    @foreach ($post->media->sortBy('order') as $media)
       <div class="mt-32">
         <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-max mt-4">
       </div>

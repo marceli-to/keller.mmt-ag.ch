@@ -1,7 +1,7 @@
 <?php
 namespace App\Livewire\Post;
 use App\Livewire\ListComponent;
-use App\Services\Media;
+use App\Services\Media as MediaService;
 use App\Models\Post;
 use Livewire\Component;
 
@@ -13,7 +13,7 @@ class ListPosts extends ListComponent
   {
     foreach($post->media as $media)
     {
-      (new Media())->remove($media->name);
+      (new MediaService())->remove($media->name);
       $media->delete();
     }
     $post->delete();
