@@ -1,4 +1,4 @@
-<article class="mb-32 relative border-t border-black py-8 {{ !$post->published ? 'opacity-40' : '' }}">
+<article class="mb-60 relative border-t border-black first-of-type:border-0 pt-32 px-20 md:pr-0 {{ !$post->published ? 'opacity-40' : '' }}">
   @if (auth()->check())
     <header class="flex text-xs space-x-12 absolute right-0 top-4">
       <a href="javascript:;" 

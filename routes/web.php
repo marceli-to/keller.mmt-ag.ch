@@ -14,10 +14,16 @@ use App\Http\Controllers\ImageController;
 */
 
 Route::view('/', 'posts')->name('posts');
+Route::view('/projektteam', 'team')->name('team');
+Route::view('/zeitplan', 'schedule')->name('schedule');
+Route::view('/webcam', 'webcam')->name('webcam');
+
 Route::get('/img/{template}/{filename}/{maxW?}/{maxH?}/{coords?}', [ImageController::class, 'getResponse']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
   Route::view('post/create', 'posts')->name('post.create');
   Route::view('post/update/{post}', 'posts')->name('post.update');
 });
+
+
 require __DIR__.'/auth.php';

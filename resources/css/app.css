@@ -4,6 +4,26 @@
 @import "typo/webfonts.css";
 /* @import "@dasundev/livewire-dropzone-styles"; */
 
+.max-width-page {
+  @apply md:max-w-[calc(100%_-_220px)] lg:max-w-[calc((100%_+_1100px)/2_-_260px)] xl:max-w-[calc((100%_+_1100px)/2_-_220px)]
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #ccc;
+}	
+
 #nprogress .bar {
   background: #6b04fd !important;
 }

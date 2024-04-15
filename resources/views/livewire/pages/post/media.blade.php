@@ -1,5 +1,5 @@
 <div class="flex flex-wrap gap-x-10 gap-y-16 justify-start w-full">
-  @foreach($mediaItems->sortBy('order') as $media)
+  @foreach($mediaItems->sortBy('order') as $key => $media)
     <div class="flex items-start justify-between gap-2 border-b border-black w-full h-auto overflow-hidden">
       <div class="flex items-center gap-8 pb-8">
         <div class="flex-none w-64 h-64">
@@ -13,7 +13,7 @@
       <div class="flex items-center mr-4 mt-8">
         <input 
           type="text"
-          value="{{ $media->order }}"
+          :value="{{ $media->order }}"
           wire:blur="order({{ $media->id }}, $event.target.value)"
           class="w-48 h-32 mr-12 border border-black text-black text-center bg-white accent-black" />
         <button 

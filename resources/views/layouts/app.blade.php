@@ -8,12 +8,9 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @livewireStyles
 </head>
-<body class="font-sans text-black antialiased min-h-full relative p-24">
-  @if (auth()->check())
-    <livewire:auth.logout />
-  @endif
+<body class="font-sans text-black antialiased min-h-full relative" x-data="{ menu: false }">
   <x-layout.header />
-  <main>
+  <main class="max-w-[1140px] mx-auto">
     {{ $slot }}
   </main>
   @livewireScripts

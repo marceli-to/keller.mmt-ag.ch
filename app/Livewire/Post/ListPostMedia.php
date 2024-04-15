@@ -28,13 +28,12 @@ class ListPostMedia extends Component
   {
     $media->order = $order;
     $media->save();
+    $this->mediaItems->firstWhere('id', $media->id)->order = $order;
   }
 
   public function render()
   {
-    return view($this->view)->with([
-      'mediaItems' => $this->mediaItems,
-    ]);
+    return view($this->view);
   }
 
 }

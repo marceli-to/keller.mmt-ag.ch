@@ -10,8 +10,18 @@ export default {
 
   theme: {
     extend: {
+
       fontFamily: {
         sans: ['aktiv-grotesk', ...defaultTheme.fontFamily.sans],
+      },
+
+      fontSize: {
+        'sm': '1rem',       // 16px
+        'base': '1.125rem', // 18px
+        'md': '1.5rem',     // 24px
+        'lg': '2.25rem',    // 36px
+        'xl': '2.5rem',     // 40px
+        '2xl': '3rem',      // 48px
       },
 
       spacing: {
