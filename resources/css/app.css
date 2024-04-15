@@ -5,7 +5,11 @@
 /* @import "@dasundev/livewire-dropzone-styles"; */
 
 .max-width-page {
-  @apply md:max-w-[calc(100%_-_220px)] lg:max-w-[calc((100%_+_1100px)/2_-_260px)] xl:max-w-[calc((100%_+_1100px)/2_-_220px)]
+  @apply md:max-w-[calc(100%_-_220px)] lg:max-w-[calc((100%_+_1100px)/2_-_220px)]
+}
+
+[x-cloak] { 
+  @apply !hidden bg-yellow-200
 }
 
 ::-webkit-scrollbar {

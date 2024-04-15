@@ -12,7 +12,7 @@
     @if (auth()->check())
       <a href="{{ route('post.create') }}"
         wire:navigate
-        class="group relative w-auto inline-flex items-center justify-start px-20 py-10 bg-black text-white text-lg font-bold mb-24">
+        class="group relative w-auto inline-flex items-center justify-start px-15 py-10 bg-black text-white text-sm font-bold mb-24 mt-20">
         Beitrag erstellen
       </a>
     @endif

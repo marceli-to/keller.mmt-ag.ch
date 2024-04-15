@@ -12,7 +12,7 @@ new class extends Component
 };
 ?>
 <a href="javascript:;" 
-  class="absolute top-10 right-10 p-4 text-sm text-gray-400 hover:text-black" 
+  class="absolute bottom-10 left-20 z-50 p-4 text-xs text-black" 
   title="Logout"
   wire:click="logout">
   Logout

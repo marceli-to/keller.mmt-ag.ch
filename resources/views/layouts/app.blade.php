@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="h-full bg-white">
+<html lang="de" class="h-full bg-white overflow-y-scroll">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 </head>
 <body class="font-sans text-black antialiased min-h-full relative" x-data="{ menu: false }">
   <x-layout.header />
-  <main class="max-w-[1140px] mx-auto">
+  <main class="max-w-[1100px] mx-auto px-20 pb-32">
     {{ $slot }}
   </main>
   @livewireScripts

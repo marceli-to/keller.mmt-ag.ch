@@ -1,6 +1,6 @@
-<article class="mb-60 relative border-t border-black first-of-type:border-0 pt-32 px-20 md:pr-0 {{ !$post->published ? 'opacity-40' : '' }}">
+<article class="mb-60 last-of-type:mb-0 relative border-t border-black first-of-type:border-0 pt-32 {{ !$post->published ? 'opacity-40' : '' }}">
   @if (auth()->check())
-    <header class="flex text-xs space-x-12 absolute right-0 top-4">
+    <header class="flex text-xs space-x-12 absolute left-0 top-10">
       <a href="javascript:;" 
         wire:click="delete({{ $post->id }})" 
         wire:confirm="Are you sure you want to delete this post?" 
@@ -30,7 +30,7 @@
   @if ($post->media)
     @foreach ($post->media->sortBy('order') as $media)
       <div class="mt-32">
-        <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-max mt-4">
+        <img src="/img/small/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-lg mt-4">
       </div>
     @endforeach
   @endif 

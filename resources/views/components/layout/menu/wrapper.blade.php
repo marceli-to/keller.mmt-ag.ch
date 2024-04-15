@@ -14,7 +14,7 @@
   x-transition:leave="opacity ease-in duration-0"
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0"
-  class="w-full bg-white fixed z-40 top-0 left-0 p-20 md:pt-0 h-full md:relative md:opacity-100 md:!block">
+  class="w-full bg-white fixed z-[100] md:z-40 top-0 left-0 p-20 md:pt-0 h-full md:relative md:opacity-100 md:!block">
   <a 
     href="javascript:;" 
     x-on:click="menu = ! menu" 
