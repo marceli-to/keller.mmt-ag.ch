@@ -1,2 +1,1 @@
-Seeding:
-php artisan db:seed --class=ClientSeeder
+ssh mmtagc@mmt-ag.ch
