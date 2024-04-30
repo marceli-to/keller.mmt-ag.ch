@@ -19,7 +19,7 @@ class Post extends Model
   ];
 
   protected $dates = [
-    'date'
+    'dateString'
   ];
 
   public function media()
@@ -27,7 +27,7 @@ class Post extends Model
     return $this->hasMany(Media::class);
   }
 
-  public function getDateAttribute($value)
+  public function getDateStringAttribute($value)
   {
     return \Carbon\Carbon::parse($value)->translatedFormat('d. F Y');
   }

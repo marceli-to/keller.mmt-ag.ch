@@ -15,6 +15,8 @@ class PostForm extends Form
 
   public $text = '';
 
+  public $code = ''; 
+
   public $published = true;
 
   public $images = [];
@@ -27,9 +29,9 @@ class PostForm extends Form
     $this->post = $post;
     $this->date = date('Y-m-d', strtotime($post->date));
     $this->text = $post->text;
+    $this->code = $post->code;
     $this->published = $post->published;
     $this->media = $post->media;
-
   }
 
   public function store() 
@@ -61,6 +63,7 @@ class PostForm extends Form
     );
 
     $this->handleMedia($this->post);
+
   }
 
   public function handleMedia(Post $post)
@@ -87,5 +90,4 @@ class PostForm extends Form
       }
     }
   }
-
 }

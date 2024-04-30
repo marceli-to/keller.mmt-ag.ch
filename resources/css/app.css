@@ -12,8 +12,13 @@
   @apply !hidden bg-yellow-200
 }
 
-h1 {
-  @apply font-medium text-md mb-12
+h2 {
+  @apply font-medium mb-12
+}
+
+p {
+  @apply mb-24
+
 }
 
 ::-webkit-scrollbar {

@@ -18,10 +18,10 @@
       <x-form.error :messages="$errors->get('form.text')" />
     </div>
     <div>
-      <x-form.label for="code" :value="__('Video Embed Code')" />
+      <x-form.label for="code" :value="__('Video Code')" />
       <x-form.text 
         wire:model="form.code" 
-        id="text" 
+        id="code" 
         name="code" />
       <x-form.error :messages="$errors->get('form.code')" />
     </div>
