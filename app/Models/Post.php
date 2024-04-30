@@ -18,7 +18,7 @@ class Post extends Model
     'published' => 'boolean'
   ];
 
-  protected $dates = [
+  protected $append = [
     'dateString'
   ];
 
