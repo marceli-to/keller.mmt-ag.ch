@@ -18,17 +18,22 @@ class Post extends Model
     'published' => 'boolean'
   ];
 
+  protected $dates = [
+    'date'
+  ];
+
   protected $appends = [
     'dateString'
   ];
+
 
   public function media()
   {
     return $this->hasMany(Media::class);
   }
 
-  public function getDateStringAttribute($value)
+  public function getDateStringAttribute()
   {
-    return \Carbon\Carbon::parse($value)->translatedFormat('d. F Y');
+    return \Carbon\Carbon::parse($this->date)->translatedFormat('d. F Y');
   }
 }
