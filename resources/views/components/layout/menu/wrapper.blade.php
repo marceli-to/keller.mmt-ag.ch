@@ -2,8 +2,8 @@
   href="javascript:;" 
   x-on:click="menu = ! menu" 
   title="Menü anzeigen"
-  class="group flex items-center justify-center w-31 h-23 md:hidden">
-  <x-icons.burger class="w-31 h-22 block" />
+  class="group flex items-center justify-center w-30 h-21 md:hidden">
+  <x-icons.burger class="w-30 h-21 block" />
 </a>
 <div 
   x-cloak 
@@ -19,19 +19,25 @@
     href="javascript:;" 
     x-on:click="menu = ! menu" 
     title="Menü verbergen"
-    class="group flex items-center justify-center w-31 h-23 md:hidden">
-    <x-icons.cross class="w-23 h-23 block" />
+    class="group flex items-center justify-center w-30 h-21 md:hidden">
+    <x-icons.cross class="w-21 h-21 block" />
   </a>
   <nav class="mt-50 text-md font-bold">
     <ul>
       {{ $slot }}
+      @if (auth()->check())
+      <livewire:auth.logout />
+      @endif
     </ul>
   </nav>
 </div>
-<div class="p-20 pt-0">
-  <nav class="text-sm font-bold hidden md:block">
+<div class="p-20 xl:px-0 pt-0">
+  <nav class="text-base md:text-xs font-bold hidden md:block">
     <ul class="flex space-x-40">
       {{ $slot }}
+      @if (auth()->check())
+        <livewire:auth.logout />
+      @endif
     </ul>
   </nav>
 </div>

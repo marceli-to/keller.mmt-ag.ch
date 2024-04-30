@@ -1,14 +1,14 @@
-<article class="mb-60 last-of-type:mb-0 relative border-t border-black first-of-type:border-0 pt-32 {{ !$post->published ? 'opacity-40' : '' }}">
-  <div class="font-bold">
+<article class="mb-40 last-of-type:mb-0 relative border-t border-black first-of-type:border-0 pt-24 {{ !$post->published ? 'opacity-40' : '' }}">
+  <div class="font-bold mb-12">
     {{ $post->date }}
   </div>
   @if ($post->text)
-  <div class="mb-24 max-w-xl">
+  <div class="mb-24 text-base md:text-lg max-w-xl">
       {{ $post->text }}
     </div>
   @endif
   @if ($post->media)
-    <div class="space-y-32 {{ !$post->text ? 'mt-24' : '' }}">
+    <div class="space-y-20 {{ !$post->text ? 'mt-24' : '' }}">
       @foreach ($post->media->sortBy('order') as $media)
         <figure>
           <img src="/img/large/{{ $media->name }}" alt="{{ $media->name }}" class="w-full max-w-xl mt-4">

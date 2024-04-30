@@ -16,12 +16,12 @@ export default {
       },
 
       fontSize: {
-        'sm': '1rem',       // 16px
-        'base': '1.125rem', // 18px
+        'xs': '1rem',
+        'sm': '1.125rem',   // 18px
+        'base': '1.25rem',  // 20px
         'md': '1.5rem',     // 24px
-        'lg': '2.25rem',    // 36px
+        'lg': '1.875rem',   // 30px
         'xl': '2.5rem',     // 40px
-        '2xl': '3rem',      // 48px
       },
 
       spacing: {
@@ -276,6 +276,11 @@ export default {
         '248': '15.5rem',
         '249': '15.5625rem',
         '250': '15.625rem',
+        '260': '16.25rem',
+        '270': '16.875rem',
+        '280': '17.5rem',
+        '290': '18.125rem',
+        '300': '18.75rem',
       }
 
     },

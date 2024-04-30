@@ -1,4 +1,4 @@
-<div class="mb-64 p-20 max-w-xl">
+<div class="mb-64 p-20 lg:px-0 max-w-xl">
   <form wire:submit="save" class="space-y-32" wire:loading.class="opacity-25">
     <div>
       <x-form.label for="date" :value="__('Datum')" />

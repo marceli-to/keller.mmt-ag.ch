@@ -10,7 +10,7 @@
 </head>
 <body class="font-sans text-black antialiased min-h-full relative" x-data="{ menu: false }">
   <x-layout.header />
-  <main class="max-w-[1100px] mx-auto px-20 pb-32">
+  <main class="max-w-[1100px] mx-auto px-20 xl:px-0 pb-32">
     {{ $slot }}
   </main>
   @livewireScripts
