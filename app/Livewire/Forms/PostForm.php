@@ -39,6 +39,7 @@ class PostForm extends Form
       $this->only([
         'date',
         'text',
+        'code',
         'published',
       ])
     );
@@ -54,6 +55,7 @@ class PostForm extends Form
       $this->only([
         'date', 
         'text',
+        'code',
         'published'
       ])
     );
@@ -70,11 +72,16 @@ class PostForm extends Form
         $filename = uniqid() . '_' . $image['name'];
         $filename = preg_replace('/[^A-Za-z0-9._-]/', '', $filename);
         \Storage::putFileAs('public/uploads', new File($image['path']), $filename);
+
+        // get image width and height
+        list($width, $height) = getimagesize($image['path']);
   
         Media::create([
           'name' => $filename,
           'extension' => $image['extension'],
           'size' => $image['size'],
+          'width' => $width,
+          'height' => $height,
           'post_id' => $post->id,
         ]);
       }

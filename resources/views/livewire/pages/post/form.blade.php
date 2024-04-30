@@ -18,6 +18,14 @@
       <x-form.error :messages="$errors->get('form.text')" />
     </div>
     <div>
+      <x-form.label for="code" :value="__('Video Embed Code')" />
+      <x-form.text 
+        wire:model="form.code" 
+        id="text" 
+        name="code" />
+      <x-form.error :messages="$errors->get('form.code')" />
+    </div>
+    <div>
       <livewire:dropzone
         wire:model="form.images"
         :rules="['image','mimes:png,jpeg','max:10420']"

@@ -8,6 +8,8 @@ class Media extends Model
     'name',
     'extension',
     'size',
+    'width',
+    'height',
     'order',
     'post_id'
   ];

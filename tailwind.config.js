@@ -16,6 +16,7 @@ export default {
       },
 
       fontSize: {
+        'xxs': '0.875rem',
         'xs': '1rem',
         'sm': '1.125rem',   // 18px
         'base': '1.25rem',  // 20px

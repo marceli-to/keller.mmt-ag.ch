@@ -12,6 +12,10 @@
   @apply !hidden bg-yellow-200
 }
 
+h1 {
+  @apply font-medium text-md mb-12
+}
+
 ::-webkit-scrollbar {
   height: 8px;
   width: 8px;
