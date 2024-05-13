@@ -6,8 +6,8 @@
           <img src="/img/thumbnail/{{ $media->name }}" alt="{{ $media->name }}" class="object-cover w-full h-full">
         </div>
         <div class="flex flex-col items-start gap-4">
-          <div class="text-center text-sm">{{ $media->name }}</div>
-          <div class="text-center text-gray-400 text-xs">{{ Number::fileSize($media->size) }}</div>
+          <div class="text-center text-xs">{{ $media->name }}</div>
+          <div class="text-center text-gray-400 text-xxs">{{ Number::fileSize($media->size) }}</div>
         </div>
       </div>
       <div class="flex items-center mr-4 mt-8">

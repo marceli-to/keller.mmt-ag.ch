@@ -35,7 +35,7 @@
         <div @click="$refs.input.click()" class="border border-black w-full cursor-pointer">
             <div>
                 <div class="flex items-center justify-center gap-2 py-24 h-full" :class="isDragging ? 'bg-yellow-200' : 'bg-white'">
-                  <p>Drop here or browse files</p>
+                  <div>Drop here or browse files</div>
                 </div>
             </div>
             <input
@@ -51,14 +51,14 @@
             >
         </div>
 
-        <div class="flex items-center gap-6 text-xs justify-end w-full mt-6">
+        <div class="flex items-center gap-6 text-xxs justify-end w-full mt-6">
             @php
               $hasMaxFileSize = ! is_null($this->maxFileSize);
               $hasMimes = ! empty($this->mimes);
             @endphp
 
             @if($hasMaxFileSize)
-              <p>{{ __('Max. :size', ['size' => Number::fileSize($this->maxFileSize * 1024)]) }}</p>
+              <div>{{ __('Max. :size', ['size' => Number::fileSize($this->maxFileSize * 1024)]) }}</div>
             @endif
 
             @if($hasMaxFileSize && $hasMimes)
@@ -66,7 +66,7 @@
             @endif
 
             @if($hasMimes)
-              <p>{{ Str::upper($this->mimes) }}</p>
+              <div>{{ Str::upper($this->mimes) }}</div>
             @endif
         </div>
 
@@ -88,8 +88,8 @@
                               </div>
                           @endif
                           <div class="flex flex-col items-start gap-4">
-                              <div class="text-center text-sm">{{ $file['name'] }}</div>
-                              <div class="text-center text-gray-400 text-xs">{{ Number::fileSize($file['size']) }}</div>
+                              <div class="text-center text-xs">{{ $file['name'] }}</div>
+                              <div class="text-center text-gray-400 text-xxs">{{ Number::fileSize($file['size']) }}</div>
                           </div>
                       </div>
                       <div class="flex items-center mr-4 mt-8">
