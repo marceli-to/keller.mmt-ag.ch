@@ -17,8 +17,7 @@
       </x-layout.menu.wrapper>
 
       <h1 class="md:ml-20 xl:ml-0 text-base md:text-lg absolute bottom-20">
-        Neubau Keller Druckmesstechnik AG<br>
-        Winterthur (2021–2025)
+        Neubau Diamant<br>KELLER Druckmesstechnik AG
       </h1>
     </div>
     <div class="md:mt-20 absolute right-20 top-20 md:top-0">
