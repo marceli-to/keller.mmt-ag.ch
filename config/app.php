@@ -169,7 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\VoltServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\Laravel\ServiceProvider::class
     ])->toArray(),
 
     /*
@@ -184,8 +184,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'MenuHelper' => App\Helpers\MenuHelper::class,
-        'Image' => Intervention\Image\Facades\Image::class
+      'MenuHelper' => App\Helpers\MenuHelper::class,
+      'Image' => Intervention\Image\Laravel\Facades\Image::class
     ])->toArray(),
 
 ];
