@@ -17,7 +17,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
         "livewire/volt": "^1.0",
-        "marceli-to/intervention-image-cache": "^1.0",
+        "marceli-to/intervention-image-cache": "^2.0",
         "stephenjude/default-model-sorting": "^3.0"
     },
     "require-dev": {

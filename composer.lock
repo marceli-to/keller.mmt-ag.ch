@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b952a6f53d1151a5503850c1ed3fb1b",
+    "content-hash": "d4e7f70175cc3a319342f3a96326cef9",
     "packages": [
         {
             "name": "brick/math",
@@ -2911,16 +2911,16 @@
         },
         {
             "name": "marceli-to/intervention-image-cache",
-            "version": "v1.1.3",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marceli-to/intervention-image-cache.git",
-                "reference": "302cdd16665120722428ea7765a6a4b8c41833b8"
+                "reference": "d02ce19470e7ae212ab0d2e881999183c14a35a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marceli-to/intervention-image-cache/zipball/302cdd16665120722428ea7765a6a4b8c41833b8",
-                "reference": "302cdd16665120722428ea7765a6a4b8c41833b8",
+                "url": "https://api.github.com/repos/marceli-to/intervention-image-cache/zipball/d02ce19470e7ae212ab0d2e881999183c14a35a2",
+                "reference": "d02ce19470e7ae212ab0d2e881999183c14a35a2",
                 "shasum": ""
             },
             "require": {
@@ -2962,9 +2962,9 @@
             "description": "A simple image caching package for Intervention Image v3",
             "support": {
                 "issues": "https://github.com/marceli-to/intervention-image-cache/issues",
-                "source": "https://github.com/marceli-to/intervention-image-cache/tree/v1.1.3"
+                "source": "https://github.com/marceli-to/intervention-image-cache/tree/v2.0.0"
             },
-            "time": "2025-03-13T22:59:34+00:00"
+            "time": "2025-03-13T23:17:31+00:00"
         },
         {
             "name": "monolog/monolog",
