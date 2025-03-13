@@ -2911,16 +2911,16 @@
         },
         {
             "name": "marceli-to/intervention-image-cache",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marceli-to/intervention-image-cache.git",
-                "reference": "7c6de312e1a3b0aecf18b02067e9f35c168b4f17"
+                "reference": "4b683693765186d48d80a7e5fdbea49d4d9a2a5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marceli-to/intervention-image-cache/zipball/7c6de312e1a3b0aecf18b02067e9f35c168b4f17",
-                "reference": "7c6de312e1a3b0aecf18b02067e9f35c168b4f17",
+                "url": "https://api.github.com/repos/marceli-to/intervention-image-cache/zipball/4b683693765186d48d80a7e5fdbea49d4d9a2a5d",
+                "reference": "4b683693765186d48d80a7e5fdbea49d4d9a2a5d",
                 "shasum": ""
             },
             "require": {
@@ -2928,6 +2928,10 @@
                 "illuminate/support": "^10.0|^11.0",
                 "intervention/image": "^3.0",
                 "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0|^9.0",
+                "phpunit/phpunit": "^10.0"
             },
             "type": "library",
             "extra": {
@@ -2958,9 +2962,9 @@
             "description": "A simple image caching package for Intervention Image v3",
             "support": {
                 "issues": "https://github.com/marceli-to/intervention-image-cache/issues",
-                "source": "https://github.com/marceli-to/intervention-image-cache/tree/v1.1.1"
+                "source": "https://github.com/marceli-to/intervention-image-cache/tree/v1.1.2"
             },
-            "time": "2025-03-13T20:29:51+00:00"
+            "time": "2025-03-13T22:53:19+00:00"
         },
         {
             "name": "monolog/monolog",
